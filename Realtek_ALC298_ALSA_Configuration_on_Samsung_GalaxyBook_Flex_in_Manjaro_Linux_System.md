@@ -1,7 +1,5 @@
---------------------------------------------------------------------------------------
-Pre-Installation
-Active Kernel required: 5.8.18.8 and higher (Kernel version 5.4.72 is confirmed failure on this platform)
-Release version on this platform:
+##Active Kernel required: 5.8.18.8 and higher (Kernel version 5.4.72 is confirmed failure on this platform)
+##Release version on this platform:
    OS: Manjaro 20.2 Nibia
    Kernel: x86_64 Linux 5.9.11-3-MANJARO
 --------------------------------------------------------------------------------------
@@ -18,7 +16,9 @@ Release version on this platform:
   >>sudo nano /etc/modprobe.d/sof.conf
   
 Add following line:
+
   options snd slots=snd_soc_skl_hda_dsp
+
 Then saving and exit
 
 4.Make snd-hda-intel in blacklist
