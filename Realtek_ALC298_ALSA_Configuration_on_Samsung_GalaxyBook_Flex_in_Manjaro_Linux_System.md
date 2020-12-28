@@ -16,19 +16,19 @@ Release version on this platform:
   >>sudo mkdir /etc/modprobe.d/
   >>sudo touch /etc/modprobe.d/sof.conf
   >>sudo nano /etc/modprobe.d/sof.conf
-  \
-  Add following line:
-    options snd slots=snd_soc_skl_hda_dsp
-  Then saving and exit
+  
+Add following line:
+  options snd slots=snd_soc_skl_hda_dsp
+Then saving and exit
 
 4.Make snd-hda-intel in blacklist
   >>sudo touch /etc/modprobe.d/blacklist.conf
   
   >>sudo nano /etc/modprobe.d/blacklist.conf
-  \
-  Add following line:
-    snd-hda-intel
-  Then saving and exit
+  
+Add following line:
+  snd-hda-intel
+Then saving and exit
 
 5.Backup previous alsa-base
   >>sudo mv /usr/share/alsa-base.conf /etc/modprobe.d/alsa-base.conf.bak
@@ -44,8 +44,9 @@ Release version on this platform:
 
 8.Create and edit ionsound.service file
   >>sudo nano /etc/systemd/system/ionsound.service
-  \
-  Add following text
+
+Add following text
+    
     [Unit]
     Description=Custom Sound
 
@@ -55,15 +56,17 @@ Release version on this platform:
     
     [Install]
     WantedBy=multi-user.target
-  Then saving and exit
+    
+Then saving and exit
 
 9.Set file permissions to allow everyone to read
   >>sudo chmod a+r /etc/systemd/system/ionsound.service
 
 10.Create and edit ionsoundsleep.service file
   >>sudo nano /etc/systemd/system/ionsoundsleep.service
-  \
-  Add following text
+  
+Add following text
+   
     [Unit]
     Description=Custom Sound Sleep Fix
 
@@ -73,7 +76,8 @@ Release version on this platform:
 
     [Install]
     WantedBy=suspend.target
-  Then saving and exit
+  
+Then saving and exit
 
 11.Use Systemctl command to activate new service mentioned above
   >>sudo systemctl daemon-reload
@@ -84,16 +88,17 @@ Release version on this platform:
 
 12.Deactivate PulseAudio Service
   >>sudo nano /etc/pulse/default.pa
-  \
-  Find the following line:
-    load-module module-suspend-on-idle
-  Change it to status be commmented:
-    ###load-module module-suspend-on-idle
+
+Find the following line:
+  load-module module-suspend-on-idle
+Change it to status be commmented:
+  ###load-module module-suspend-on-idle
 
 13.Reboot your machine
 
 14.Launch alsamixer in the terminal(Konsole)and modify volumes:
   >>$ alsamixer
+    
     Press F6 to change audio hardware device and ensure the sof-hda-dsp is listed then select it
     Increase the volumes in all columns
     Ensure the gb Gain (Display at the top left corner) never exceeds above 0.00
