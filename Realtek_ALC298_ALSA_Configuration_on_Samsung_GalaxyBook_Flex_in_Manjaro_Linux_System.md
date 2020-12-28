@@ -1,7 +1,10 @@
-##Active Kernel required: 5.8.18.8 and higher (Kernel version 5.4.72 is confirmed failure on this platform)
-##Release version on this platform:
-   OS: Manjaro 20.2 Nibia
-   Kernel: x86_64 Linux 5.9.11-3-MANJARO
+Active Kernel required: 5.8.18.8 and higher (Kernel version 5.4.72 is confirmed failure on this platform)
+
+Release version on this platform:
+
+OS: Manjaro 20.2 Nibia
+
+Kernel: x86_64 Linux 5.9.11-3-MANJARO
 --------------------------------------------------------------------------------------
 
 1.Install sof-firmware (Sound Open Software)
