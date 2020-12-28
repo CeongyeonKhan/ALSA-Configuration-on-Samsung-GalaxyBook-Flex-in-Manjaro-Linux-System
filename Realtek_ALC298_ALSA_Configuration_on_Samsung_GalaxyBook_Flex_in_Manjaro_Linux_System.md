@@ -23,6 +23,7 @@ Release version on this platform:
 
 4.Make snd-hda-intel in blacklist
   >>sudo touch /etc/modprobe.d/blacklist.conf
+  
   >>sudo nano /etc/modprobe.d/blacklist.conf
   \
   Add following line:
@@ -36,7 +37,9 @@ Release version on this platform:
 
 7.Rename snd description file and set permissions as read,write,executable for all
   >>sudo mkdir /home/$YOURUSERNAME/scripts/
+  
   >>sudo mv ./Downloads/Samsung_NT930QCG-K0xCN⁄K58A.sh /home/$YOURUSERNAME/scripts/T0912.sh
+  
   >>sudo chmod a+rwx /home/$YOURUSERNAME/scripts/T0912.sh
 
 8.Create and edit ionsound.service file
@@ -74,7 +77,9 @@ Release version on this platform:
 
 11.Use Systemctl command to activate new service mentioned above
   >>sudo systemctl daemon-reload
+  
   >>sudo systemctl enable ionsound.service
+  
   >>sudo systemctl enable ionsoundsleep.service
 
 12.Deactivate PulseAudio Service
@@ -106,4 +111,5 @@ Release version on this platform:
 
 18.Several situations the audio will be unabled when after booting, use following command to solve it
   >>sudo amixer -D pulse sset Master toggle
+  
   >>reboot
